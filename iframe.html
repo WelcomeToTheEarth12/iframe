@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Viewer</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            height: 100vh;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 1em;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+        }
+        iframe {
+            flex-grow: 1;
+            width: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+<input type="text" id="urlInput" placeholder="Enter URL here" oninput="updateIframe()">
+<iframe id="iframe" src=""></iframe>
+
+<script>
+    function updateIframe() {
+        const url = document.getElementById("urlInput").value;
+        document.getElementById("iframe").src = url;
+    }
+</script>
+
+</body>
+</html>
